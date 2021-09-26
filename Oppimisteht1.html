@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8" /> 
+
+<title>Lemmikkisivu</title> 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+
+<script> 
+function changePage(id) {
+
+    var p1 = document.getElementById("page1");
+    var p2 = document.getElementById("page2");
+
+    if (id == "home") {
+
+        p1.style.visibility = "visible";
+        p2.style.visibility = "hidden";
+        p1.style.height = "auto";
+        p2.style.height = "0";
+    } else if (id == "kuva") {
+        p1.style.visibility = "hidden";
+        p2.style.visibility = "visible";
+        p1.style.height = "0";
+        p2.style.height = "auto";
+    }
+  }
+</script>
+</head>
+
+<body>
+<div class="container">
+<div id="navi">
+
+<ul id="nav">
+<li>
+<a href="#" onClick="changePage('home');">Etusivu</a></li>
+<li><a href="#" onClick="changePage('kuva');">Kuvat</a></li>
+</ul>
+
+</div>
+<div id="pages">
+<div id="page1">
+<h3>Etusivu</h3>
+<h1>Neilikan tarina</h1>
+
+<div class="card-group" id="menu">
+   
+  <div class="card">
+    <img class="card-img-top" src="myPetsKuvat/pentu.jpg" alt="kissanpentu">
+    <div class="card-body">
+      <h5 class="card-title">Pikkuinen Neilikka</h5>
+      <p class="card-text">Neilikalla oli jo ihan pentuna kauniit silmät ja suloinen katse. Se oli pennuista arin ja jäi helposti sisarustensa jalkoihin. Se vaikutti kuitenkin innokkaalta ja leikkisältä. </p>
+      
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="myPetsKuvat/sisarukset.jpg" alt="pentue">
+    <div class="card-body">
+      <h5 class="card-title">Pentukatras </h5>
+      <p class="card-text">Kaikki pennut olivat keskenään hyvin erilaisia. Ne olisivat varmasti jokainen sopineet meidän perheeseemme. Mietimme, että haluamme tarjota kodin sellaiselle pennulle, josta ei välttämättä heti kiinnostuta ja joka tarvitsee tukea kasvaakseen isoksi ja onnelliseksi. </p>
+      
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="myPetsKuvat/emo.jpg" alt="emokissa">
+    <div class="card-body">
+      <h5 class="card-title">Emo</h5>
+      <p class="card-text">Emo oli hyvin ihmisläheinen ja siitä näki, että se oli kasvanut kotikissana. Se halusi paljon huomiota ja läheisyyttä ihmisiltä. Välillä siitä näki, että se olisi kaivannut lomaa pennuistaan - kuten varmasti kaikki äidit toisinaan. :D </p>
+      
+    </div>
+  </div>
+        
+    
+</div>
+
+</br>
+
+<img src=pentu2.jpg>
+</br>
+</br>
+<h2>Neilikka</h2>
+<p>Syntynyt syyskuussa 2020</p>
+<p>Neilikka syntyi kolmen muun sisaruksensa kanssa ulos. Sen 
+emo oli päässyt omistajailtaan karkuun ja tullut tiineeksi.
+Eläinsuojeluyhdistyksen työntekijät löysivät emon ja tämän neljäviikkoiset pennut
+läheltä emon kotia halkopinon suojista. Emon ja pentujen loukutus oli pitkä operaatio,
+mutta lopulta kaikki saatiin suojaan. Neilikka varttui eläinsuojeluyhdistysken
+tiloissa kolme kuukautta. Adoptoimme sen uuden vuoden alla. Alkuun Neilikka oli pelokas ja vietti ensimmäiset päivät sohvan tai sängyn alla. 
+Öisin se kuitenkin tuli haistelemaan meitä. Se rakasti kissanmaitoa ja katkarapuja. 
+Uudet asiat kuten veden kohina tai oven avaaminen saivat sen jännittyneeksi, mutta jännitys
+laukesi nopeasti leikkimällä. Neilikan lempileikiksi muodostui noutoleikki: kun sille heitti rinkulan, se hyökkäsi
+vauhdilla sen perään ja haki sen mitä vaikeimmistakin paikoista. Se toi rinkulan takaisin heittäjälle ja
+kehujen ja rapsutusten jälkeen ja luovutti rinkulan uutta kierrosta varten.</p>
+
+</div>
+
+<div id="page2">
+<h1>Kuvat</h1>
+</br>
+
+<img src=neilikka.jpg>
+</br>
+
+<p>Neilikka</p>
+
+</br>
+<canvas id="kuva"></canvas>
+<script>
+var canvas = document.getElementById('kuva');
+var context = canvas.getContext('2d');
+var imageObj = new Image();
+imageObj.onload = function () {
+
+    var sourceX = 10;
+    var sourceY = 60;
+    var sourceWidth = 1220;
+    var sourceHeight = 1000;
+    var destWidth = sourceWidth;
+    var destHeight = sourceHeight;
+    var destX = (canvas.width / 2 - destWidth / 2);
+    var destY = (canvas.height / 2 - destHeight / 2);
+
+    context.drawImage(imageObj, sourceX, sourceY, sourceWidth, sourceHeight,
+        destX, destY, destWidth, destHeight);
+};
+imageObj.src = 'neilikka.jpg';
+
+</script>
+
+<p>Onko ihanampaa kuin pehmeä kissantassu...<p>
+</br>
+<canvas id="kuva2"></canvas>
+<p>Asioiden peilaaminen on tärkeää: </br>
+voi olla yhtä hyvä syödä ennen päiväunia </br>
+kuin nukkua ennen ateriaa.</p>
+
+<script>
+var canvas2 = document.getElementById('kuva2');
+var context2 = canvas2.getContext('2d');
+var imageObj2 = new Image();
+imageObj2.onload = function () {
+
+    context2.scale(-1, 1);
+    var sourceX = 150;
+    var sourceY = 90;
+    var sourceWidth = 1400;
+    var sourceHeight = 500;
+    var destWidth = sourceWidth;
+    var destHeight = sourceHeight;
+    var destX = (canvas.width / 2 - destWidth / 2);
+    var destY = (canvas.height / 2 - destHeight / 2);
+
+    context2.drawImage(imageObj2, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY,
+        destWidth, destHeight);
+};
+imageObj2.src = 'neilikka.jpg';
+ 
+</script>
+
+</div>
+</div>
+</div>
+</body>
+
+</html>
